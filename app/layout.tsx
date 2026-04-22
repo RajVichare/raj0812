@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { siteContent } from "@/data/siteContent";
@@ -66,6 +67,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
         </div>
+        <Analytics />
       </body>
     </html>
   );

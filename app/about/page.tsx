@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { DownloadCvButton } from "@/components/DownloadCvButton";
 import { HoverVideoLink } from "@/components/HoverVideoLink";
 import { HomeFooter } from "@/components/HomeFooter";
 import { siteContent } from "@/data/siteContent";
@@ -39,13 +40,7 @@ export default function AboutPage() {
           <p className="min-w-0 flex-1 text-left font-body text-[14px] leading-[1.35] min-[480px]:text-[15px] md:text-[18px] md:leading-[1.4]">
             You can download my CV here if you&apos;re looking for a more formal overview.
           </p>
-          <a
-            href={siteContent.resumeFile}
-            download
-            className="inline-flex h-[39px] w-[129px] shrink-0 items-center justify-center rounded-[10px] bg-[#3B3B3B] font-body text-[13px] font-medium tracking-[0.02em] text-[#FFFFFF] transition hover:opacity-90 md:text-[14px]"
-          >
-            DOWNLOAD CV
-          </a>
+          <DownloadCvButton href={siteContent.resumeFile} />
         </div>
       </section>
 
@@ -125,8 +120,9 @@ export default function AboutPage() {
             <p className="mt-1 font-body text-[16px] leading-[1.7] md:text-[18px] md:leading-[1.75]">
               After studying IT, I went on to study design thinking and innovation, which gave me a very different way
               of looking at problems. That early phase of my work took me through places like SUGAR Network, where I
-              worked on public-sector challenges, even on my first international work trip to China and later into
-              startup environments like GreedyGame, where you learned by building in fast-paced environments.
+              worked on public-sector challenges and even had my first international work trip to China, and later into
+              startup environments like GreedyGame, where most of my learning came from building in fast-paced
+              environments.
             </p>
             <p className="mt-4 font-body text-[16px] leading-[1.7] md:text-[18px] md:leading-[1.75]">
               That period shaped a lot of how I still work today, staying curious, getting close to the problem, and
@@ -205,7 +201,7 @@ export default function AboutPage() {
           <div className="max-w-[587px]">
             <h3 className="font-body text-[18px] font-semibold leading-[1.35]">Beyond work</h3>
             <p className="mt-1 font-body text-[16px] leading-[1.7] md:text-[18px] md:leading-[1.75]">
-              Outside of work, I usually have something I’m learning, making, or getting mildly obsessive about. I
+              I usually have something I’m learning, making, or getting mildly obsessive about. I
               recently finished a course in policy design, mostly because I wanted to understand how design helps
               create impact at a larger system.
             </p>

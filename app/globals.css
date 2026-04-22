@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #faf7f3;
+  --text: #3b3b3b;
+  --muted: #5d5d5d;
+  --line: #e7e2dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--text);
+  font-family: var(--font-av), "Avenir Next", Avenir, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.font-display {
+  font-family: var(--font-pd), "Playfair Display", Georgia, serif;
+}
+
+.font-body {
+  font-family: var(--font-av), "Avenir Next", Avenir, "Segoe UI", sans-serif;
+}

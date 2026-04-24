@@ -2,6 +2,9 @@ import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { StructuredData } from "@/components/StructuredData";
+import { absoluteUrl, ogImagePath, personStructuredData, primaryKeywords, searchConsoleVerification, siteName, siteUrl, websiteStructuredData } from "@/data/seo";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { siteContent } from "@/data/siteContent";
@@ -39,8 +42,62 @@ const playfairDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: siteContent.name,
-  description: "A clean and modern Product Manager portfolio built with Next.js and Tailwind CSS.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Raj Vichare | Product Manager & Design-first Product Builder",
+    template: "%s | Raj Vichare"
+  },
+  description: siteContent.seoDescription,
+  applicationName: siteName,
+  keywords: primaryKeywords,
+  authors: [{ name: siteContent.fullName, url: absoluteUrl("/") }],
+  creator: siteContent.fullName,
+  publisher: siteContent.fullName,
+  category: "Portfolio",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
+  verification: {
+    google: searchConsoleVerification
+  },
+  openGraph: {
+    title: "Raj Vichare | Product Manager & Design-first Product Builder",
+    description: siteContent.seoDescription,
+    url: absoluteUrl("/"),
+    siteName,
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Raj Vichare portfolio Open Graph image"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Raj Vichare | Product Manager & Design-first Product Builder",
+    description: siteContent.seoDescription,
+    images: [absoluteUrl(ogImagePath)]
+  },
+  alternates: {
+    canonical: "/"
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
+  },
   icons: {
     icon: [
       {
@@ -63,10 +120,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${avenirNext.variable} ${playfairDisplay.variable} bg-sand text-ink antialiased`}>
+        <StructuredData data={[personStructuredData, websiteStructuredData]} />
         <div className="min-h-screen">
           <Navbar />
           <main>{children}</main>
         </div>
+        <GoogleAnalytics />
         <Analytics />
       </body>
     </html>

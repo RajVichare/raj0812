@@ -1,7 +1,29 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { HomeFooter } from "@/components/HomeFooter";
+import { StructuredData } from "@/components/StructuredData";
 import { projects } from "@/data/projects";
+import { absoluteUrl, buildMetadata } from "@/data/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Raj Vichare | Product Manager & Design-first Product Builder",
+  description:
+    "Raj Vichare is a product builder with a background in IT, design, and business, working across fintech, enterprise, and consumer platforms with teams like PhonePe, Tata Consumer Products, Vodafone Idea, Peak XV, and GreedyGame.",
+  path: "/",
+  keywords: [
+    "Raj Vichare",
+    "Raj Vivek Vichare",
+    "Raj Vichare Product Manager",
+    "Raj Vichare Portfolio",
+    "Product Builder",
+    "Product Strategy",
+    "UX Design",
+    "Enterprise Products",
+    "Fintech Products",
+    "Workflow Products"
+  ]
+});
 
 type HomeProject = {
   slug: string;
@@ -23,7 +45,7 @@ const homeProjects: readonly HomeProject[] = [
     description:
       "A field sales platform built around how distributor teams actually work and helping them plan routes, place orders, and manage collections in one place.",
     image: "/home/mavic.png",
-    imageAlt: "MAVIC project preview",
+    imageAlt: "MAVIC field sales platform case study preview for Tata Consumer Products",
     href: "/projects/mavic",
     ctaLabel: "Read More"
   },
@@ -34,7 +56,7 @@ const homeProjects: readonly HomeProject[] = [
     description:
       "A workforce planning platform that brought annual planning and in-year changes into a single system. It helped teams align on headcount, track decisions, and manage approvals without losing context across layers.",
     image: "/home/headcount.png",
-    imageAlt: "Headcount project preview",
+    imageAlt: "PhonePe annual operating plan and workforce planning case study preview",
     href: "/projects/headcount",
     ctaLabel: "Read More"
   },
@@ -45,7 +67,7 @@ const homeProjects: readonly HomeProject[] = [
     description:
       "An ad monetisation platform at GreedyGame to give direct control and visibility to the clients over their ad operations, enabling better decisions and stronger revenue outcomes.",
     image: "/home/adx.png",
-    imageAlt: "ADX project preview",
+    imageAlt: "GreedyGame AdX monetisation platform case study preview",
     href: "/projects/adx",
     ctaLabel: "Read More"
   },
@@ -56,7 +78,7 @@ const homeProjects: readonly HomeProject[] = [
     description:
       "Part of a 6-person SUGAR Network team working across 11 schools to understand schooling gaps through field research. The work evolved into a digital solution to help children of migrant labourers stay in school during COVID-19.",
     image: "/home/dice.png",
-    imageAlt: "DICE project preview",
+    imageAlt: "DICE education ecosystem project preview",
     href: "https://www.behance.net/gallery/101334049/DICE-Digital-Education-Ecosystem",
     ctaLabel: "Open in Behance",
     external: true
@@ -65,9 +87,21 @@ const homeProjects: readonly HomeProject[] = [
 
 export default function HomePage() {
   const featuredProject = projects.find((project) => project.slug === "sora-cloud");
+  const homeStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Raj Vichare | Product Manager & Design-first Product Builder",
+    description: metadata.description,
+    url: absoluteUrl("/"),
+    about: {
+      "@type": "Person",
+      name: "Raj Vivek Vichare"
+    }
+  };
 
   return (
     <div className="bg-white text-[#3b3b3b]">
+      <StructuredData data={homeStructuredData} />
       <div dangerouslySetInnerHTML={{ __html: "<!--Hello, please dont look into my code! -->" }} />
       <section className="w-full bg-[#f6f4f1]">
         <div className="relative mx-auto min-h-[827px] max-w-[1440px] overflow-hidden px-5 pb-10 pt-8 min-[480px]:px-6 md:px-12 md:pb-12 md:pt-10 lg:px-20 lg:pb-14 lg:pt-12 xl:px-[120px] xl:pb-0 xl:pt-[65px]">
@@ -87,7 +121,7 @@ export default function HomePage() {
             <div className="mt-8 flex justify-center xl:hidden">
               <Image
                 src="/home/raj.png"
-                alt="Raj Vichare portrait"
+                alt="Raj Vichare portrait, product manager and design-first product builder"
                 width={462}
                 height={478}
                 priority
@@ -119,7 +153,7 @@ export default function HomePage() {
 
           <Image
             src="/home/raj.png"
-            alt="Raj Vichare portrait"
+            alt="Raj Vichare portrait, product manager and design-first product builder"
             width={462}
             height={478}
             priority
@@ -145,7 +179,7 @@ export default function HomePage() {
               <div className="overflow-hidden rounded-[10px] bg-white">
                 <Image
                   src="/home/sora.png"
-                  alt={featuredProject.title}
+                  alt="Sora Cloud AI infrastructure and LLM marketplace case study preview"
                   width={633}
                   height={290}
                   className="h-auto max-h-[290px] w-full rounded-[10px] bg-white object-contain object-center"

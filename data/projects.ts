@@ -10,6 +10,12 @@ export type Project = {
   approach: string[];
   outcomes: string[];
   lessons: string[];
+  seo: {
+    title: string;
+    description: string;
+    keywords: string[];
+    ogImage: string;
+  };
 };
 
 export const projects: Project[] = [
@@ -36,7 +42,25 @@ export const projects: Project[] = [
     lessons: [
       "Complex field operations need interfaces that stay clear under pressure.",
       "System thinking matters most when many small actions must work together."
-    ]
+    ],
+    seo: {
+      title: "MAVIC Case Study | Tata Consumer Products Field Sales Platform",
+      description:
+        "A field sales platform case study for Tata Consumer Products focused on route planning, order management, collections, and workflow design for distributor and FMCG sales teams.",
+      keywords: [
+        "Raj Vichare",
+        "Raj Vichare Portfolio",
+        "field sales platform",
+        "sales force automation",
+        "enterprise product",
+        "route planning",
+        "order management",
+        "collections workflow",
+        "FMCG sales app",
+        "workflow products"
+      ],
+      ogImage: "/projects/mavic/Hero.png"
+    }
   },
   {
     slug: "headcount",
@@ -61,7 +85,25 @@ export const projects: Project[] = [
     lessons: [
       "Enterprise planning tools succeed when complexity is organized, not hidden.",
       "Financial users need trust, context, and traceability at every step."
-    ]
+    ],
+    seo: {
+      title: "AOP Case Study | PhonePe Workforce Planning Platform",
+      description:
+        "A PhonePe workforce planning case study covering annual operating plan workflows, headcount planning, approval systems, and enterprise decision-making for HR, finance, and business teams.",
+      keywords: [
+        "Raj Vichare",
+        "Raj Vichare Product Manager",
+        "workforce planning",
+        "annual operating plan",
+        "headcount planning",
+        "HRBP workflow",
+        "enterprise planning platform",
+        "approval workflows",
+        "fintech products",
+        "enterprise products"
+      ],
+      ogImage: "/projects/PhonePe/Hero.png"
+    }
   },
   {
     slug: "adx",
@@ -86,7 +128,24 @@ export const projects: Project[] = [
     lessons: [
       "Operational products need clarity before they need embellishment.",
       "Designing for repeat usage requires strong hierarchy and predictable patterns."
-    ]
+    ],
+    seo: {
+      title: "AdX Case Study | Self-serve Monetisation Platform",
+      description:
+        "A GreedyGame AdX case study about building a self-serve monetisation platform with publisher workflows, ad unit setup, performance dashboards, and operational visibility.",
+      keywords: [
+        "Raj Vivek Vichare",
+        "ad monetisation platform",
+        "Google AdX",
+        "publisher platform",
+        "app monetisation",
+        "ad unit management",
+        "revenue dashboard",
+        "platform products",
+        "enterprise products"
+      ],
+      ogImage: "/projects/ADX/Hero.adx.png"
+    }
   },
   {
     slug: "sora-cloud",
@@ -111,7 +170,24 @@ export const projects: Project[] = [
     lessons: [
       "Developer products still need strong onboarding and conceptual clarity.",
       "Even complex AI systems benefit from calmer interaction patterns."
-    ]
+    ],
+    seo: {
+      title: "Sora Cloud Case Study | LLM Marketplace & GPU Infrastructure",
+      description:
+        "A case study on Sora Cloud, an AI infrastructure and LLM marketplace product designed around deployment flows, GPU resources, model selection, and enterprise AI usability.",
+      keywords: [
+        "Raj Vichare Portfolio",
+        "LLM marketplace",
+        "GPU infrastructure",
+        "AI deployment platform",
+        "model deployment",
+        "AI infrastructure",
+        "enterprise AI platform",
+        "platform products",
+        "product strategy"
+      ],
+      ogImage: "/projects/Sora/Hero.so.png"
+    }
   }
 ];
 

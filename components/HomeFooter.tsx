@@ -2,12 +2,18 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { trackEvent } from "@/data/analytics";
 import { siteContent } from "@/data/siteContent";
 
 export function HomeFooter() {
   const [copied, setCopied] = useState(false);
 
   async function handleCopyEmail() {
+    trackEvent("contact_cta_click", {
+      location: "home_footer",
+      method: "copy_email"
+    });
+
     try {
       await navigator.clipboard.writeText(siteContent.email);
       setCopied(true);
@@ -39,6 +45,11 @@ export function HomeFooter() {
             href={siteContent.linkedIn}
             target="_blank"
             rel="noreferrer"
+            onClick={() =>
+              trackEvent("linkedin_click", {
+                location: "home_footer"
+              })
+            }
             className="group flex items-center gap-2 text-[#3b3b3b] transition-colors hover:text-[#0077B5]"
             aria-label="Open LinkedIn profile"
           >

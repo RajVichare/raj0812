@@ -1,8 +1,28 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { DownloadCvButton } from "@/components/DownloadCvButton";
 import { HoverVideoLink } from "@/components/HoverVideoLink";
 import { HomeFooter } from "@/components/HomeFooter";
+import { StructuredData } from "@/components/StructuredData";
+import { absoluteUrl, buildMetadata } from "@/data/seo";
 import { siteContent } from "@/data/siteContent";
+
+export const metadata: Metadata = buildMetadata({
+  title: "About Raj Vichare | Product, Design & Systems",
+  description:
+    "Learn more about Raj Vichare’s journey across IT, design, business, product execution, leadership, and personal interests in ecology, systems, and building.",
+  path: "/about",
+  type: "profile",
+  keywords: [
+    "About Raj Vichare",
+    "Raj Vichare Product Manager",
+    "Product execution",
+    "Systems thinking",
+    "Design thinking",
+    "Bangalore Product Manager",
+    "India Product Manager"
+  ]
+});
 
 const focusAreas = [
   {
@@ -33,8 +53,23 @@ const conservationLinks = {
 };
 
 export default function AboutPage() {
+  const profileStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name: "About Raj Vichare",
+    description: metadata.description,
+    url: absoluteUrl("/about"),
+    mainEntity: {
+      "@type": "Person",
+      name: siteContent.fullName,
+      jobTitle: ["Product Manager", "Product Builder"],
+      sameAs: [siteContent.linkedIn]
+    }
+  };
+
   return (
     <div className="bg-[#FFFFFF] text-[#3B3B3B]">
+      <StructuredData data={profileStructuredData} />
       <section className="w-full border-b border-[#e9e3db] bg-[#F6F4F1]">
         <div className="mx-auto flex min-h-[79px] max-w-[1440px] items-center justify-between gap-3 px-5 py-5 min-[480px]:gap-4 min-[480px]:px-6 md:gap-5 md:px-12 lg:px-20 xl:px-[120px]">
           <p className="min-w-0 flex-1 text-left font-body text-[14px] leading-[1.35] min-[480px]:text-[15px] md:text-[18px] md:leading-[1.4]">
@@ -49,7 +84,7 @@ export default function AboutPage() {
           <div className="flex flex-col xl:items-center xl:pl-[60px]">
             <Image
               src="/about/quick-stage.png"
-              alt="Raj speaking on stage"
+              alt="Raj Vichare speaking on stage at SUGAR Networks Global Kickoff Event"
               width={501}
               height={334}
               className="h-auto w-full max-w-[501px] object-contain"
@@ -110,7 +145,7 @@ export default function AboutPage() {
         <div className="mt-[60px] grid items-start gap-8 xl:grid-cols-[402px_minmax(0,736px)] xl:items-start xl:gap-[60px]">
           <Image
             src="/about/starting-design.png"
-            alt="Raj with a team at an exhibition"
+            alt="Raj Vichare with a team at an exhibition during his early design and product journey"
             width={402}
             height={340}
             className="self-start h-auto w-full object-contain"
@@ -136,7 +171,7 @@ export default function AboutPage() {
           <div className="h-[180px] overflow-hidden bg-white md:h-[250px] xl:h-[340px]">
             <Image
               src="/about/row-one-left.png"
-              alt="Raj with a team outdoors"
+              alt="Raj Vichare collaborating with a team outdoors"
               width={570}
               height={340}
               className="h-full w-full object-contain"
@@ -145,7 +180,7 @@ export default function AboutPage() {
           <div className="h-[180px] overflow-hidden bg-white md:h-[250px] xl:h-[340px]">
             <Image
               src="/about/row-one-right.png"
-              alt="Raj with students in a classroom"
+              alt="Raj Vichare with students in a classroom project setting"
               width={570}
               height={340}
               className="h-full w-full object-contain"
@@ -173,7 +208,7 @@ export default function AboutPage() {
           <div className="h-[180px] overflow-hidden bg-white md:h-[250px] xl:h-[340px]">
             <Image
               src="/about/row-two-left.png"
-              alt="Raj with a team indoors"
+              alt="Raj Vichare with a team indoors during a workshop"
               width={570}
               height={340}
               className="h-full w-full object-contain"
@@ -182,7 +217,7 @@ export default function AboutPage() {
           <div className="h-[180px] overflow-hidden bg-white md:h-[250px] xl:h-[340px]">
             <Image
               src="/about/row-two-right.png"
-              alt="Raj with a designathon team"
+              alt="Raj Vichare with a designathon team"
               width={570}
               height={340}
               className="h-full w-full object-contain"
@@ -193,7 +228,7 @@ export default function AboutPage() {
         <div className="mt-[120px] grid grid-cols-[120px_minmax(0,1fr)] items-start gap-4 md:grid-cols-[180px_minmax(0,1fr)] md:gap-8 xl:grid-cols-[402px_587px] xl:gap-[60px]">
           <Image
             src="/about/beyond-main.png"
-            alt="Raj with a parrot"
+            alt="Raj Vichare outdoors, reflecting his interest in ecology and living systems"
             width={402}
             height={478}
             className="h-[120px] w-[120px] rounded-full object-cover object-top md:h-[180px] md:w-[180px] xl:h-full xl:w-full xl:rounded-none xl:object-cover"

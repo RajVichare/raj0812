@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { DownloadCvButton } from "@/components/DownloadCvButton";
 import { HoverVideoLink } from "@/components/HoverVideoLink";
 import { HomeFooter } from "@/components/HomeFooter";
@@ -72,10 +73,20 @@ export default function AboutPage() {
       <StructuredData data={profileStructuredData} />
       <section className="w-full border-b border-[#e9e3db] bg-[#F6F4F1]">
         <div className="mx-auto flex min-h-[79px] max-w-[1440px] items-center justify-between gap-3 px-5 py-5 min-[480px]:gap-4 min-[480px]:px-6 md:gap-5 md:px-12 lg:px-20 xl:px-[120px]">
-          <p className="min-w-0 flex-1 text-left font-body text-[14px] leading-[1.35] min-[480px]:text-[15px] md:text-[18px] md:leading-[1.4]">
+          <p className="min-w-0 flex-1 text-left font-body text-[14px] leading-[1.45] min-[480px]:text-[15px] md:text-[18px] md:leading-[1.4]">
             You can download my CV here if you&apos;re looking for a more formal overview.
           </p>
-          <DownloadCvButton href={siteContent.resumeFile} />
+          <div className="flex w-[129px] shrink-0 flex-col items-center gap-2 min-[480px]:gap-3 md:w-auto md:flex-row md:items-center md:gap-4">
+            <Link
+              href="/about/resume"
+              className="order-2 font-body text-[13px] leading-none text-[#3B3B3B] underline decoration-[0.08em] underline-offset-[0.25em] transition hover:opacity-70 md:order-1 md:text-[14px]"
+            >
+              <span className="md:hidden">View CV</span>
+              <span className="hidden md:inline">View</span>
+            </Link>
+            <span className="hidden font-body text-[13px] leading-none text-[#8a847c] md:block md:order-2">or</span>
+            <DownloadCvButton href={siteContent.resumeFile} location="about_page_top_strip" className="order-1 md:order-3" />
+          </div>
         </div>
       </section>
 

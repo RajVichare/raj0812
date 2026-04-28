@@ -44,7 +44,7 @@ const playfairDisplay = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Raj Vichare | Product Manager & Design-first Product Builder",
+    default: "Raj Vichare | Product Manager & Design-first Builder",
     template: "%s | Raj Vichare"
   },
   description: siteContent.seoDescription,
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     google: searchConsoleVerification
   },
   openGraph: {
-    title: "Raj Vichare | Product Manager & Design-first Product Builder",
+    title: "Raj Vichare | Product Manager & Design-first Builder",
     description: siteContent.seoDescription,
     url: absoluteUrl("/"),
     siteName,
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Raj Vichare | Product Manager & Design-first Product Builder",
+    title: "Raj Vichare | Product Manager & Design-first Builder",
     description: siteContent.seoDescription,
     images: [absoluteUrl(ogImagePath)]
   },
@@ -101,11 +101,43 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: "/favicon.png",
+        type: "image/png",
+        sizes: "100x100"
+      },
+      {
         url: "/icons/favicon-light.png",
+        type: "image/png",
+        sizes: "100x100",
         media: "(prefers-color-scheme: light)"
       },
       {
         url: "/icons/favicon-dark.png",
+        type: "image/png",
+        sizes: "100x100",
+        media: "(prefers-color-scheme: dark)"
+      }
+    ],
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "100x100",
+        type: "image/png"
+      }
+    ],
+    shortcut: [
+      {
+        url: "/favicon.png",
+        type: "image/png"
+      },
+      {
+        url: "/icons/favicon-light.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: light)"
+      },
+      {
+        url: "/icons/favicon-dark.png",
+        type: "image/png",
         media: "(prefers-color-scheme: dark)"
       }
     ]

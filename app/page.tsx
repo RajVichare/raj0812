@@ -7,9 +7,9 @@ import { projects } from "@/data/projects";
 import { absoluteUrl, buildMetadata } from "@/data/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Raj Vichare | Product Manager & Design-first Product Builder",
+  title: "Raj Vichare | Product Manager & Design-first Builder",
   description:
-    "Raj Vichare is a product builder with a background in IT, design, and business, working across fintech, enterprise, and consumer platforms with teams like PhonePe, Tata Consumer Products, Vodafone Idea, Peak XV, and GreedyGame.",
+    "Product builder with a background in IT, design, and business. I work across product strategy, UX, systems, and execution, turning complex product systems into usable, scalable solutions.",
   path: "/",
   keywords: [
     "Raj Vichare",
@@ -90,7 +90,7 @@ export default function HomePage() {
   const homeStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Raj Vichare | Product Manager & Design-first Product Builder",
+    name: "Raj Vichare | Product Manager & Design-first Builder",
     description: metadata.description,
     url: absoluteUrl("/"),
     about: {

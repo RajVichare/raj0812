@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { projects } from "@/data/projects";
 import { siteContent } from "@/data/siteContent";
 
-const fallbackSiteUrl = "http://localhost:3000";
+const fallbackSiteUrl = "https://www.rajvichare.com";
 
 function normalizeSiteUrl(value?: string) {
   if (!value) {
@@ -13,10 +13,7 @@ function normalizeSiteUrl(value?: string) {
 }
 
 export const siteUrl = normalizeSiteUrl(
-  process.env.NEXT_PUBLIC_SITE_URL ??
-    process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL ??
-    process.env.VERCEL_PROJECT_PRODUCTION_URL ??
-    process.env.VERCEL_URL
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.rajvichare.com"
 );
 
 export const siteName = `${siteContent.name} Portfolio`;

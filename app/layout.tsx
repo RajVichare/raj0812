@@ -101,42 +101,35 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon.png",
+        url: "/icons/Google.png",
         type: "image/png",
         sizes: "100x100"
       },
       {
-        url: "/icons/favicon-light.png",
+        url: "/icons/light.png",
         type: "image/png",
         sizes: "100x100",
         media: "(prefers-color-scheme: light)"
       },
       {
-        url: "/icons/favicon-dark.png",
+        url: "/icons/dark.png",
         type: "image/png",
         sizes: "100x100",
         media: "(prefers-color-scheme: dark)"
       }
     ],
-    apple: [
-      {
-        url: "/apple-touch-icon.png",
-        sizes: "100x100",
-        type: "image/png"
-      }
-    ],
     shortcut: [
       {
-        url: "/favicon.png",
+        url: "/icons/Google.png",
         type: "image/png"
       },
       {
-        url: "/icons/favicon-light.png",
+        url: "/icons/light.png",
         type: "image/png",
         media: "(prefers-color-scheme: light)"
       },
       {
-        url: "/icons/favicon-dark.png",
+        url: "/icons/dark.png",
         type: "image/png",
         media: "(prefers-color-scheme: dark)"
       }
